@@ -37,7 +37,7 @@ const SideSheet = ({ children }: { children: React.ReactNode }) => {
     >
       <div className="md:rounded-[24px] bg-surface-container h-full shadow-2xl shadow-core-onPrimary border-[1px] border-surface-containerLowest flex flex-col overflow-hidden">
         <SideSheetHeader />
-        <div className="flex-1 overflow-y-auto">{children}</div>
+        <div className="flex-1 overflow-y-auto overscroll-contain">{children}</div>
       </div>
     </div>
   );
@@ -102,7 +102,7 @@ export const SideSheetContentContainer = ({
 }) => {
   return (
     <div
-      className="h-full w-full flex flex-col overflow-y-auto"
+      className="h-full w-full flex flex-col overflow-y-auto overscroll-contain"
       onClick={onClick}
     >
       {children}

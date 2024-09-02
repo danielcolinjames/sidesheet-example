@@ -20,6 +20,7 @@ export const KeyboardAwareLoadingButton: React.FC<
       )}
       style={{
         paddingBottom: "env(safe-area-inset-bottom)",
+        zIndex: 10, // Ensure it stays above other elements
       }}
     >
       <LoadingButton {...props} />
