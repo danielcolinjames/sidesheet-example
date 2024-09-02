@@ -11,6 +11,10 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .overscroll-contain {
+    overscroll-behavior: contain;
+  }
 }
 
 html,

@@ -55,7 +55,7 @@ export function InputScreen() {
   return (
     <SideSheetContentContainer>
       <div
-        className="flex flex-col items-center justify-start gap-4 mt-2 h-[calc(100%-52px)] w-full"
+        className="flex flex-col items-center justify-start gap-4 mt-2 h-full w-full"
         style={{
           overflow: "hidden",
         }}
