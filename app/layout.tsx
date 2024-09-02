@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CoreProvider } from "../providers/CoreProvider";
 import { AppContainer } from "../components/AppContainer";
 import "./styles.css";
+import { Viewport } from "next/dist/lib/metadata/types/extra-types";
 
 const APP_NAME = "Test";
 const APP_DEFAULT_TITLE = "Test";
@@ -48,6 +49,10 @@ export const metadata: Metadata = {
     maximumScale: 1,
     viewportFit: "cover",
   },
+};
+
+export const viewport = {
+  themeColor: "#000000",
 };
 
 export default function RootLayout({

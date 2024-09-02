@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+const withPWA = require("@ducanh2912/next-pwa").default({
+  dest: "public",
+})
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -6,10 +10,12 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
+      use: ["@svgr/webpack"],
     })
     return config
   },
 }
 
-module.exports = nextConfig
+module.exports = withPWA({
+  nextConfig,
+})

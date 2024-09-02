@@ -11,9 +11,11 @@ const SideSheet = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (sideSheetOpen) {
       document.body.style.overflow = "hidden";
+      document.body.style.overscrollBehavior = "contain";
     }
     return () => {
       document.body.style.overflow = "auto";
+      document.body.style.overscrollBehavior = "auto";
     };
   }, [sideSheetOpen]);
 
@@ -25,17 +27,25 @@ const SideSheet = ({ children }: { children: React.ReactNode }) => {
     <div
       className={classNames(
         "w-full z-20 right-0 fixed bottom-0 md:pr-2 md:py-2 md:max-w-[400px] ease-in-out duration-200 flex flex-col",
-        animation
+        animation,
+        "overscroll-contain"
       )}
       role="dialog"
       aria-modal="true"
       style={{
-        height: `calc(100dvh - ${keyboardHeight}px)`,
-        top: 0,
         overflow: "hidden",
+        top: 0,
+        height: `calc(100dvh - ${keyboardHeight}px)`,
+        overscrollBehavior: "contain",
       }}
     >
-      <div className="md:rounded-[24px] bg-surface-container h-full shadow-2xl shadow-core-onPrimary border-[1px] border-surface-containerLowest flex flex-col overflow-hidden">
+      <div
+        className="md:rounded-[24px] bg-surface-container h-full shadow-2xl shadow-core-onPrimary border-[1px] border-surface-containerLowest flex flex-col"
+        style={{
+          overscrollBehavior: "none",
+          paddingBottom: "env(safe-area-inset-bottom)",
+        }}
+      >
         <SideSheetHeader />
         <div className="flex-1 overflow-y-auto">{children}</div>
       </div>
@@ -56,7 +66,10 @@ const SideSheetHeader = () => {
   };
 
   return (
-    <div className="sticky top-0 bg-surface-container flex flex-row items-center justify-between w-full border-b border-structure-outlineAlt py-[20px] z-20">
+    <div
+      className="sticky top-0 bg-surface-container flex flex-row items-center justify-between w-full border-b border-structure-outlineAlt py-[20px] z-20"
+      style={{ overscrollBehavior: "none" }}
+    >
       <div className="min-w-[24px] min-h-[24px]">
         {previousScreen && (
           <button

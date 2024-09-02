@@ -504,3 +504,7 @@ summary svg {
 * {
   -webkit-tap-highlight-color: transparent;
 }
+/* 
+.unselectable {
+  user-select: none;
+} */

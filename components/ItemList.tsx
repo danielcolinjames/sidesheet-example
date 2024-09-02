@@ -17,7 +17,7 @@ export const ItemList = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full" style={{ overscrollBehavior: "none" }}>
       <div className="bg-surface-containerLowest flex flex-col items-center justify-center w-full sticky top-[42px] z-20 p-2">
         <div className="flex w-full bg-surface-containerLow rounded-full p-1 max-w-lg mx-auto">
           <button
@@ -45,11 +45,11 @@ export const ItemList = () => {
       <div className="flex flex-col gap-2 px-2 pt-2 max-w-lg mx-auto">
         {activeItem === ItemStatus.NEW
           ? newItems.map((item) => (
-              <OpenItem key={item?.id} item={item} />
-            ))
+            <OpenItem key={item?.id} item={item} />
+          ))
           : oldItems.map((item) => (
-              <OpenItem key={item?.id} item={item} />
-            ))}
+            <OpenItem key={item?.id} item={item} />
+          ))}
       </div>
     </div>
   );

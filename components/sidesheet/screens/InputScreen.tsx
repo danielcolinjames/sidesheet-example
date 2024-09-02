@@ -57,7 +57,8 @@ export function InputScreen() {
       <div
         className="flex flex-col items-center justify-start gap-4 mt-2 h-[calc(100%-52px)] w-full"
         style={{
-          overflow: "hidden",
+          overflow: "auto",
+          overscrollBehavior: "none",
         }}
       >
         <div className="w-full">

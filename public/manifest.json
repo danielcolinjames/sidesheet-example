@@ -1,6 +1,6 @@
 {
-  "name": "Test",
-  "short_name": "Test",
+  "name": "PWA App",
+  "short_name": "PWA App",
   "icons": [
     {
       "src": "/icons/android-chrome-192x192.png",
@@ -19,9 +19,9 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#000000",
-  "background_color": "#000000",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
   "start_url": "/",
-  "display": "fullscreen",
-  "orientation": "natural"
+  "display": "standalone",
+  "orientation": "portrait"
 }
